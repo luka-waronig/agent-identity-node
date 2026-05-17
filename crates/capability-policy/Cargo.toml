@@ -4,6 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 rust-version.workspace = true
+repository.workspace = true
 description = "Capability policy schema and enforcement helpers for local agent nodes."
 
 [dependencies]
