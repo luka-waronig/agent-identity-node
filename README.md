@@ -2,9 +2,9 @@
 
 Agent Identity Node is a small Rust-first substrate for local agent authorization. It gives an agent runtime a durable cryptographic node identity, encrypted key storage, bootstrap authentication, signed scoped capability grants, and explicit capability policies.
 
-This repository is intended for researchers and developers who want to experiment with verifiable local identity and policy enforcement without installing a larger desktop agent system. It was extracted from the broader HIVE research project as a standalone, inspectable security substrate.
+This repository is intended for researchers and developers who want to work on verifiable local identity and policy enforcement without installing a larger desktop agent system. It was extracted a broader research project on agent architectures as a standalone, inspectable security substrate.
 
-## What This Is
+## What is in here?
 
 - An encrypted Ed25519 libp2p identity stored locally with Argon2 plus AES-256-GCM.
 - A local HTTP daemon that exposes identity, manifest, capability, grant issuance, grant verification, and policy-gated execution endpoints.
@@ -14,11 +14,6 @@ This repository is intended for researchers and developers who want to experimen
 - An optional libp2p mesh crate for signed gossipsub transport experiments.
 - Minimal Rust and Python client examples.
 
-## What This Is Not
-
-- Not the full HIVE application.
-- Not an agent framework, model router, desktop UI, benchmark harness, or mission orchestration layer.
-- Not a finished security product. This is an alpha research substrate and should be reviewed before production use.
 
 ## Quick Start
 
@@ -159,6 +154,3 @@ Agent Identity Node is dual-licensed under either:
 
 You may use this project under either license, at your option.
 
-## Relationship To HIVE
-
-HIVE uses a richer desktop and orchestration environment around similar concepts: identity, capability manifests, local enforcement, agent process supervision, mission state, and telemetry. Agent Identity Node is the small open-source core that focuses only on identity and capability enforcement.
