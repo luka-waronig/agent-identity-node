@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-identity-node.dev/schemas/manifest.schema.json",
+  "title": "Agent Identity Node Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "peer_id", "role", "api", "identity", "capabilities", "policy"],
+  "properties": {
+    "schema_version": { "const": "agent-node/v0alpha1" },
+    "peer_id": { "type": "string", "minLength": 1 },
+    "role": { "type": "string", "minLength": 1 },
+    "api": {
+      "type": "object",
+      "required": ["bind_host", "port", "auth"],
+      "properties": {
+        "bind_host": { "type": "string", "minLength": 1 },
+        "port": { "type": "integer", "minimum": 1, "maximum": 65535 },
+        "auth": { "type": "string", "minLength": 1 }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "required": ["peer_id", "public_key_sha256", "public_key_protobuf_base64", "storage_format"],
+      "properties": {
+        "peer_id": { "type": "string", "minLength": 1 },
+        "public_key_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "public_key_protobuf_base64": { "type": "string", "minLength": 1 },
+        "storage_format": { "type": "string", "minLength": 1 }
+      }
+    },
+    "capabilities": { "type": "array" },
+    "policy": { "$ref": "policy.schema.json" }
+  }
+}

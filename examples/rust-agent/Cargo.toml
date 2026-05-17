@@ -1,0 +1,11 @@
+[package]
+name = "agent-node-rust-agent-example"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+reqwest = { version = "0.12", features = ["json"] }
+serde_json.workspace = true
+tokio.workspace = true
