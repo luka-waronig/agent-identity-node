@@ -17,19 +17,23 @@ This repository is intended for researchers and developers who want to work on v
 
 ## Quick Start
 
-Install the daemon from a checked-out repository:
+Install the daemon from the GitHub repository:
 
+```bash
+cargo install --git https://github.com/luka-waronig/agent-identity-node agent-node-daemon
+```
+
+Or install the daemon from a checked-out repository:
 ```bash
 cargo install --path crates/node-daemon
 ```
-
 Run a local profile after installation:
 
 ```bash
 AIN_IDENTITY_PASSWORD="change-me-for-local-testing" agent-node init --profile .dev-node --role researcher-agent && AIN_IDENTITY_PASSWORD="change-me-for-local-testing" agent-node run --profile .dev-node --port 8787
 ```
 
-On PowerShell:
+In PowerShell:
 
 ```powershell
 $env:AIN_IDENTITY_PASSWORD="change-me-for-local-testing"; agent-node init --profile .dev-node --role researcher-agent; agent-node run --profile .dev-node --port 8787
