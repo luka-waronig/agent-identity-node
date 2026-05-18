@@ -20,7 +20,7 @@ This document describes the initial alpha threat model for Agent Identity Node.
 - Tool requests are checked against a node capability policy before execution.
 - Vault file access is restricted to sanitized file names.
 
-## Out Of Scope For The Alpha
+## Out Of Scope (for this release)
 
 - Protection from a fully compromised host operating system.
 - Protection from malware that can read the token file and key password.
@@ -36,7 +36,7 @@ This document describes the initial alpha threat model for Agent Identity Node.
 - Expanding the tool catalog without careful review can create policy bypasses.
 - Binding the API to a public interface exposes the daemon to remote clients.
 
-## Near-Term Hardening Work
+## Next additions if not done already:
 
 - Add grant revocation and audit logs.
 - Add per-request proof-of-possession for grants.
