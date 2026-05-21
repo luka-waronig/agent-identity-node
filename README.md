@@ -1,6 +1,6 @@
 # Agent Identity Node (AIN)
 
-Agent Identity Node is a small Rust-first substrate for local agent authorization. It gives an agent runtime a durable cryptographic node identity, encrypted key storage, bootstrap authentication, signed scoped capability grants, and explicit capability policies.
+Agent Identity Node is a small Rust substrate for local agent authorization. It gives an agent runtime a durable cryptographic node identity, encrypted key storage, bootstrap authentication, signed scoped capability grants, and explicit capability policies.
 
 This repository is intended for researchers and developers who want to work on verifiable local identity and policy enforcement without installing a larger desktop agent system. It was extracted a broader research project on agent architectures as a standalone, inspectable security substrate.
 
