@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/luka-waronig/agent-identity-node/main/schemas/grant.schema.json",
+  "title": "Agent Identity Node Signed Capability Grant",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claims", "signature_base64"],
+  "properties": {
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "issuer_peer_id",
+        "subject",
+        "scopes",
+        "issued_at",
+        "expires_at",
+        "request_code"
+      ],
+      "properties": {
+        "schema_version": { "const": "agent-node/grant/v0alpha1" },
+        "issuer_peer_id": { "type": "string", "minLength": 1 },
+        "subject": { "type": "string", "minLength": 1 },
+        "scopes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "issued_at": { "type": "integer" },
+        "expires_at": { "type": "integer" },
+        "request_code": { "type": "string", "minLength": 16 }
+      }
+    },
+    "signature_base64": { "type": "string", "minLength": 1 }
+  }
+}

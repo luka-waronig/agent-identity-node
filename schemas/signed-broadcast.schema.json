@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/luka-waronig/agent-identity-node/main/schemas/signed-broadcast.schema.json",
+  "title": "Agent Identity Node Signed Broadcast",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sender_peer_id",
+    "timestamp",
+    "content",
+    "signature_base64"
+  ],
+  "properties": {
+    "schema_version": { "const": "agent-node/signed-broadcast/v0alpha1" },
+    "sender_peer_id": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "integer" },
+    "content": { "type": "string", "minLength": 1 },
+    "signature_base64": { "type": "string", "minLength": 1 }
+  }
+}
