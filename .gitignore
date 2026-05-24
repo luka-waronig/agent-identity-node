@@ -1,0 +1,12 @@
+target/
+.dev-node/
+.agent-node/
+.smoke-node/
+*.key
+*.token
+*.db
+*.sqlite
+vault_*/
+.env
+.env.*
+!.env.example
