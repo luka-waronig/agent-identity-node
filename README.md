@@ -136,18 +136,11 @@ Agents can authenticate with `Authorization: Bearer <token>` for bootstrap/admin
 
 ## Integrations
 
-Agent Identity Node does not replace MCP or A2A. It gives those runtimes a local authority that can hold raw keys, issue scoped grants, verify grants, enforce policy, and expose a verifiable node identity.
+Agent Identity Node does not replace MCP or A2A, rather extends the protocols. It gives those runtimes a local authority that can hold raw keys, issue scoped grants, verify grants, enforce policy, and expose a verifiable node identity.
 
 - MCP clients can call `POST /mcp` with JSON-RPC `initialize`, `tools/list`, and `tools/call`. Tool calls require either the bootstrap bearer token or an `AIN-Grant` with the matching `tool:*` scope.
 - A2A-aware clients and registries can fetch `GET /.well-known/agent-card.json` to discover the node identity authority, supported interfaces, auth schemes, and policy-exposed skills.
 
-## Roadmap for some of the next updates and contributions...
-
-- Add grant revocation and persisted authorization/audit logs.
-- Add a daemon flag that publishes signed broadcasts through the optional libp2p mesh crate.
-- Publish signed invocation receipts.
-- Add formal message signature verification examples.
-- Add cargo-deny, secret scanning, and dependency review workflows.
 
 ## License
 
